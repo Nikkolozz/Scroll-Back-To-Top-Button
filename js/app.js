@@ -2,9 +2,6 @@ let txt = document.getElementById("txt1")
 let btn = document.getElementById("btn1")
 let txt2 = document.getElementById("txt2")
 
-
-
-
 const txtChange = () => {
     document.body.style.backgroundColor = "grey"
     document.body.style.height = "150vh"
@@ -34,6 +31,7 @@ const btnChange = () => {
 txtChange()
 btnChange()
 
+
 window.onscroll = function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         btn.style.display = "block"
@@ -42,8 +40,9 @@ window.onscroll = function scrollFunction() {
     }
 }
 
+
 btn.addEventListener("click", () => {
-    let scrollStep = -window.scrollY / 60;
+    let scrollStep = -window.scrollY / 60;    
     let scrollInterval = setInterval(() => {
         if (window.scrollY !== 0) {
             window.scrollBy(0, scrollStep);
@@ -53,9 +52,7 @@ btn.addEventListener("click", () => {
     }, 10);
     let array = ["red", "green", "blue", "purple", "pink", "yellow", "black"]
     let randomIndex = Math.floor(Math.random() * array.length)
-    let randomColor = array[randomIndex]
-    console.log(array);
-    console.log(randomColor);
+    let randomColor = array[randomIndex];
     if (randomColor == "yellow") {
         txt.style.color = "black"
         txt2.style.color = "black"
@@ -73,5 +70,4 @@ btn.addEventListener("click", () => {
         btn.style.color = "white"
     }
     document.body.style.backgroundColor = randomColor
-
 })
